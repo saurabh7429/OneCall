@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/privacy_policy_title" android:textSize="28sp"
+            android:textStyle="bold" android:textColor="@color/text_primary"
+            android:layout_marginBottom="24dp" />
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="16sp" android:textColor="@color/text_secondary"
+            android:lineSpacingMultiplier="1.6"
+            android:text="OneCall ek fully offline app hai. Is app ka koi bhi data internet pe nahi jaata.\n\nYeh app aapke phone aur ek doosre Bluetooth device ke beech kaam karta hai — bina kisi server ke, bina internet ke.\n\nKoi analytics nahi. Koi telemetry nahi. Koi data collection nahi.\n\nBluetooth pairing sirf aapke local devices ke beech hoti hai. Call history sirf aapke device ke local database mein save hoti hai.\n\nApp band karne ke baad session history automatically delete ho jaati hai (secondary device pe)." />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,2 +1,4 @@
-# ProGuard rules for OneCall
-# Add keep rules here when release shrinker is enabled.
+# Add project specific ProGuard rules here.
+-keep class com.onecall.model.** { *; }
+-keep class com.onecall.data.db.** { *; }
+-keepattributes *Annotation*

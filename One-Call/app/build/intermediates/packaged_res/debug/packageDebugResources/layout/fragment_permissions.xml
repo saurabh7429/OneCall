@@ -1,141 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/onecall_background"
     android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".ui.screens.PermissionsFragment">
+    android:background="@color/bg_dark"
+    android:padding="24dp">
 
+    <!-- Header -->
     <TextView
-        android:id="@+id/permissionsTitleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/permissions_screen_title"
-        android:textColor="@color/onecall_blue"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/permissionsWarningBanner"
+        android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:visibility="gone"
-        app:cardBackgroundColor="@color/onecall_warning_background"
-        app:cardCornerRadius="14dp"
-        app:cardElevation="0dp"
-        app:strokeColor="@color/onecall_warning_border"
-        app:strokeWidth="1dp">
+        android:text="@string/permissions_title"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_marginBottom="4dp" />
 
-        <TextView
-            android:id="@+id/permissionsWarningText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="14dp"
-            android:textColor="@color/onecall_warning_text"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            tools:text="2 required permissions missing — app sahi kaam nahi karega" />
-    </com.google.android.material.card.MaterialCardView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OneCall ko kuch permissions chahiye"
+        android:textSize="14sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="24dp" />
 
+    <!-- Scrollable permissions list -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
-        android:fillViewport="true"
-        android:overScrollMode="ifContentScrolls">
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/permissions_required_group_title"
-                android:textColor="@color/onecall_blue_dark"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
+            <!-- Required Header -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/permissions_required_group_subtitle"
-                android:textColor="@color/onecall_gray"
-                android:textSize="13sp" />
+                android:text="@string/permissions_required_header"
+                android:textSize="13sp"
+                android:textAllCaps="true"
+                android:textColor="@color/brand_primary"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="8dp" />
 
-            <LinearLayout
-                android:id="@+id/requiredPermissionsContainer"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_required_permissions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:orientation="vertical" />
+                android:nestedScrollingEnabled="false"
+                android:layout_marginBottom="24dp" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="12dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/permissions_optional_group_title"
-                android:textColor="@color/onecall_blue_dark"
-                android:textSize="17sp"
-                android:textStyle="bold" />
-
+            <!-- Optional Header -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/permissions_optional_group_subtitle"
-                android:textColor="@color/onecall_gray"
-                android:textSize="13sp" />
+                android:text="@string/permissions_optional_header"
+                android:textSize="13sp"
+                android:textAllCaps="true"
+                android:textColor="@color/text_secondary"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="8dp" />
 
-            <LinearLayout
-                android:id="@+id/optionalPermissionsContainer"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_optional_permissions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:orientation="vertical" />
+                android:nestedScrollingEnabled="false" />
+
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
+    <!-- Buttons -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_grant_all"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal">
+        android:layout_height="56dp"
+        android:text="@string/btn_grant_all"
+        style="@style/Widget.OneCall.Button.Primary"
+        android:layout_marginTop="16dp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/grantRequiredPermissionsButton"
-            android:layout_width="0dp"
-            android:layout_height="52dp"
-            android:layout_weight="1"
-            android:text="@string/grant_required_permissions"
-            android:textAllCaps="false"
-            android:textColor="@color/onecall_white"
-            app:backgroundTint="@color/onecall_blue"
-            app:cornerRadius="14dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/skipPermissionsButton"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="52dp"
-            android:layout_marginStart="12dp"
-            android:layout_weight="1"
-            android:text="@string/skip_permissions"
-            android:textAllCaps="false"
-            android:textColor="@color/onecall_blue"
-            app:cornerRadius="14dp"
-            app:strokeColor="@color/onecall_blue"
-            app:strokeWidth="1.5dp" />
-    </LinearLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_continue"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="@string/btn_continue"
+        style="@style/Widget.OneCall.Button.Secondary"
+        android:layout_marginTop="12dp" />
 
 </LinearLayout>

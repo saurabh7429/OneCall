@@ -1,78 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/onecall_background"
-    tools:context=".ui.screens.WelcomeFragment">
+    android:background="@color/bg_dark"
+    android:fillViewport="true">
 
-    <LinearLayout
-        android:id="@+id/welcomeContent"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:paddingLeft="32dp"
-        android:paddingTop="24dp"
-        android:paddingRight="32dp"
-        android:paddingBottom="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:padding="24dp"
+        android:minHeight="600dp">
 
-        <View
-            android:id="@+id/logoPlaceholder"
-            android:layout_width="104dp"
-            android:layout_height="104dp"
-            android:background="@drawable/bg_logo_placeholder" />
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/ic_app_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="60dp" />
 
+        <!-- App Name -->
         <TextView
-            android:id="@+id/appNameText"
+            android:id="@+id/tv_app_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="sans-serif"
             android:text="@string/app_name"
-            android:textColor="@color/onecall_blue"
-            android:textSize="32sp"
-            android:textStyle="bold" />
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
 
+        <!-- Tagline -->
         <TextView
-            android:id="@+id/taglineText"
+            android:id="@+id/tv_tagline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:fontFamily="sans-serif"
-            android:text="@string/welcome_tagline"
-            android:textColor="@color/onecall_gray"
+            android:text="@string/tagline"
             android:textSize="16sp"
-            android:textStyle="italic" />
+            android:textColor="@color/text_secondary"
+            app:layout_constraintTop_toBottomOf="@id/tv_app_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
 
+        <!-- Main Device Button -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/mainDeviceSetupButton"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:layout_marginTop="32dp"
-            android:text="@string/main_device_setup"
-            android:textAllCaps="false"
-            android:textColor="@color/onecall_white"
-            app:cornerRadius="14dp"
-            app:backgroundTint="@color/onecall_blue" />
+            android:id="@+id/btn_main_device"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:text="@string/btn_main_device_setup"
+            style="@style/Widget.OneCall.Button.Primary"
+            app:layout_constraintTop_toBottomOf="@id/tv_tagline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="60dp" />
 
+        <!-- Secondary Device Button -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/secondaryDeviceSetupButton"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:layout_marginTop="12dp"
-            android:text="@string/join_as_secondary_device"
-            android:textAllCaps="false"
-            android:textColor="@color/onecall_blue"
-            app:cornerRadius="14dp"
-            app:strokeColor="@color/onecall_blue"
-            app:strokeWidth="1.5dp" />
-    </LinearLayout>
+            android:id="@+id/btn_secondary_device"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:text="@string/btn_join_secondary"
+            style="@style/Widget.OneCall.Button.Secondary"
+            app:layout_constraintTop_toBottomOf="@id/btn_main_device"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Tutorial Link -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_tutorial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_tutorial"
+            style="@style/Widget.OneCall.Button.Text"
+            app:layout_constraintTop_toBottomOf="@id/btn_secondary_device"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Version Info -->
+        <TextView
+            android:id="@+id/tv_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="v1.0 · Local · Private · No Internet"
+            android:textSize="12sp"
+            android:textColor="@color/text_hint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="24dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

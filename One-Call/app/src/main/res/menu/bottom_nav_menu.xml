@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/nav_home"
-        android:icon="@android:drawable/ic_menu_sort_by_size"
-        android:title="Devices" />
-    <item
-        android:id="@+id/nav_dialpad"
-        android:icon="@android:drawable/ic_menu_call"
-        android:title="Dialpad" />
-    <item
-        android:id="@+id/nav_contacts"
-        android:icon="@android:drawable/ic_menu_agenda"
-        android:title="Contacts" />
-    <item
-        android:id="@+id/nav_history"
-        android:icon="@android:drawable/ic_menu_recent_history"
-        android:title="History" />
-    <item
-        android:id="@+id/nav_settings"
-        android:icon="@android:drawable/ic_menu_preferences"
-        android:title="Settings" />
+    <item android:id="@+id/mainDashboardFragment" android:icon="@drawable/ic_nav_dialpad" android:title="@string/nav_dialpad" />
+    <item android:id="@+id/contactsFragment" android:icon="@drawable/ic_nav_contacts" android:title="@string/nav_contacts" />
+    <item android:id="@+id/callHistoryFragment" android:icon="@drawable/ic_nav_history" android:title="@string/nav_history" />
+    <item android:id="@+id/settingsFragment" android:icon="@drawable/ic_nav_settings" android:title="@string/nav_settings" />
 </menu>

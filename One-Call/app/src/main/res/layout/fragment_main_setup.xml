@@ -1,200 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/onecall_background"
-    tools:context=".ui.screens.MainSetupFragment">
+    android:background="@color/bg_dark"
+    android:fillViewport="true">
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/mainSetupScrollView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:clipToPadding="false"
-        android:fillViewport="true"
-        android:paddingLeft="20dp"
-        android:paddingTop="20dp"
-        android:paddingRight="20dp"
-        android:paddingBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@id/continueToDashboardButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
 
-        <LinearLayout
+        <!-- Header -->
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:text="@string/main_setup_title"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary" />
 
-            <TextView
-                android:id="@+id/mainSetupTitleText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/main_setup_title"
-                android:textColor="@color/onecall_blue"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_setup_subtitle"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="24dp" />
 
-            <TextView
-                android:id="@+id/mainSetupSubtitleText"
+        <!-- Bluetooth Status Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="16dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:text="@string/main_setup_subtitle"
-                android:textColor="@color/onecall_gray"
-                android:textSize="14sp" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
 
-            <com.google.android.material.card.MaterialCardView
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_bluetooth" />
+
+                <TextView
+                    android:id="@+id/tv_bt_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/bluetooth_on"
+                    android:textSize="16sp"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginStart="12dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_enable_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="@string/btn_enable_bluetooth"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    app:strokeColor="@color/brand_primary"
+                    android:textColor="@color/brand_primary"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Pair Section Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="16dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                app:cardBackgroundColor="@color/onecall_background"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="0dp"
-                app:strokeColor="@color/onecall_card_stroke"
-                app:strokeWidth="1dp">
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center">
+
+                <!-- Pulse animation container -->
+                <FrameLayout
+                    android:id="@+id/fl_pulse_container"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="16dp">
+
+                    <View
+                        android:id="@+id/pulse_ring_outer"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:background="@drawable/bg_pulse_ring"
+                        android:alpha="0"
+                        android:layout_gravity="center" />
+
+                    <View
+                        android:id="@+id/pulse_ring_inner"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/bg_pulse_ring"
+                        android:alpha="0"
+                        android:layout_gravity="center" />
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_bluetooth"
+                        android:layout_gravity="center" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tv_countdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:textColor="@color/brand_secondary"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/discoverable_hint"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_secondary"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_make_discoverable"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="@string/btn_make_discoverable"
+                    style="@style/Widget.OneCall.Button.Primary"
+                    android:layout_marginTop="16dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Paired Device Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_paired_device"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="16dp"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/paired_device_header"
+                    android:textSize="13sp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_secondary"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="12dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="18dp">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:id="@+id/codeDigitsContainer"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="horizontal"
-                            android:gravity="center_vertical" />
-
-                        <ImageButton
-                            android:id="@+id/mainCopyCodeButton"
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:background="?attr/selectableItemBackgroundBorderless"
-                            android:contentDescription="@string/copy_code_content_description"
-                            android:src="@android:drawable/ic_menu_share"
-                            app:tint="@color/onecall_blue" />
-                    </LinearLayout>
+                    <View
+                        android:id="@+id/iv_connection_dot"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:background="@drawable/ic_connected" />
 
                     <TextView
-                        android:id="@+id/codeCountdownText"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/tv_paired_device_name"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
-                        android:textColor="@color/onecall_gray"
+                        android:layout_weight="1"
                         android:textSize="16sp"
+                        android:textColor="@color/text_primary"
                         android:textStyle="bold"
-                        tools:text="09:45 remaining" />
-
-                    <TextView
-                        android:id="@+id/codeExpiredText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/code_expired"
-                        android:textColor="@color/onecall_error"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:visibility="gone" />
+                        android:layout_marginStart="12dp" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/regenerateCodeButton"
+                        android:id="@+id/btn_forget_device"
                         android:layout_width="wrap_content"
-                        android:layout_height="48dp"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/regenerate_code"
-                        android:textAllCaps="false"
-                        android:textColor="@color/onecall_white"
-                        android:visibility="gone"
-                        app:backgroundTint="@color/onecall_blue"
-                        app:cornerRadius="14dp" />
+                        android:layout_height="36dp"
+                        android:text="@string/btn_forget_device"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:textColor="@color/status_error" />
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/shareCodeButton"
-                        style="@style/Widget.Material3.Button.OutlinedButton"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:layout_marginTop="12dp"
-                        android:text="@string/share_code"
-                        android:textAllCaps="false"
-                        android:textColor="@color/onecall_blue"
-                        app:cornerRadius="14dp"
-                        app:strokeColor="@color/onecall_blue"
-                        app:strokeWidth="1.5dp" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:id="@+id/connectedDevicesHeadingText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="22dp"
-                android:textColor="@color/onecall_blue_dark"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                tools:text="Connected Devices (0/5)" />
+            </LinearLayout>
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/onecall_background"
-                app:cardCornerRadius="18dp"
-                app:cardElevation="0dp"
-                app:strokeColor="@color/onecall_card_stroke"
-                app:strokeWidth="1dp">
+        </androidx.cardview.widget.CardView>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="14dp">
+        <!-- Continue Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_continue_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/btn_continue_dashboard"
+            style="@style/Widget.OneCall.Button.Primary"
+            android:layout_marginTop="8dp" />
 
-                    <TextView
-                        android:id="@+id/connectedDevicesEmptyText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="4dp"
-                        android:paddingBottom="10dp"
-                        android:text="@string/connected_devices_empty"
-                        android:textAlignment="center"
-                        android:textColor="@color/onecall_gray"
-                        android:textSize="14sp" />
+    </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/connectedDevicesContainer"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/continueToDashboardButton"
-        android:layout_width="0dp"
-        android:layout_height="52dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="@string/continue_to_dashboard"
-        android:textAllCaps="false"
-        android:textColor="@color/onecall_white"
-        app:backgroundTint="@color/onecall_blue"
-        app:cornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

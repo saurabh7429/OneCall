@@ -1,50 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/welcomeFragment">
 
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.onecall.ui.screens.WelcomeFragment"
-        android:label="@string/app_name">
+        android:name="com.onecall.ui.welcome.WelcomeFragment"
+        android:label="Welcome"
+        tools:layout="@layout/fragment_welcome">
         <action
-            android:id="@+id/action_welcomeFragment_to_mainSetupFragment"
-            app:destination="@id/mainSetupFragment" />
-        <action
-            android:id="@+id/action_welcomeFragment_to_secondarySetupFragment"
-            app:destination="@id/secondarySetupFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/mainSetupFragment"
-        android:name="com.onecall.ui.screens.MainSetupFragment"
-        android:label="@string/main_device_setup">
-        <action
-            android:id="@+id/action_mainSetupFragment_to_permissionsFragment"
+            android:id="@+id/action_welcome_to_permissions"
             app:destination="@id/permissionsFragment" />
         <action
-            android:id="@+id/action_mainSetupFragment_to_dashboardFragment"
-            app:destination="@id/dashboardFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/secondarySetupFragment"
-        android:name="com.onecall.ui.screens.SecondarySetupFragment"
-        android:label="@string/join_as_secondary_device">
+            android:id="@+id/action_welcome_to_tutorial"
+            app:destination="@id/tutorialFragment" />
         <action
-            android:id="@+id/action_secondarySetupFragment_to_permissionsFragment"
-            app:destination="@id/permissionsFragment" />
+            android:id="@+id/action_welcome_to_main_dashboard"
+            app:destination="@id/mainDashboardFragment" />
+        <action
+            android:id="@+id/action_welcome_to_secondary_dashboard"
+            app:destination="@id/secondaryDashboardFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/permissionsFragment"
-        android:name="com.onecall.ui.screens.PermissionsFragment"
-        android:label="@string/permissions_screen_title" />
+        android:name="com.onecall.ui.permissions.PermissionsFragment"
+        android:label="Permissions"
+        tools:layout="@layout/fragment_permissions">
+        <action
+            android:id="@+id/action_permissions_to_main_setup"
+            app:destination="@id/mainSetupFragment" />
+        <action
+            android:id="@+id/action_permissions_to_secondary_setup"
+            app:destination="@id/secondarySetupFragment" />
+        <argument
+            android:name="deviceMode"
+            app:argType="string"
+            android:defaultValue="MAIN" />
+    </fragment>
 
     <fragment
-        android:id="@+id/dashboardFragment"
-        android:name="com.onecall.ui.screens.DashboardFragment"
-        android:label="@string/dashboard_placeholder_title" />
+        android:id="@+id/tutorialFragment"
+        android:name="com.onecall.ui.tutorial.TutorialFragment"
+        android:label="Tutorial"
+        tools:layout="@layout/fragment_tutorial">
+        <action
+            android:id="@+id/action_tutorial_to_welcome"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainSetupFragment"
+        android:name="com.onecall.ui.setup.MainSetupFragment"
+        android:label="Main Setup"
+        tools:layout="@layout/fragment_main_setup">
+        <action
+            android:id="@+id/action_main_setup_to_dashboard"
+            app:destination="@id/mainDashboardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondarySetupFragment"
+        android:name="com.onecall.ui.setup.SecondarySetupFragment"
+        android:label="Secondary Setup"
+        tools:layout="@layout/fragment_secondary_setup">
+        <action
+            android:id="@+id/action_secondary_setup_to_dashboard"
+            app:destination="@id/secondaryDashboardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainDashboardFragment"
+        android:name="com.onecall.ui.dashboard.MainDashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_main_dashboard" />
+
+    <fragment
+        android:id="@+id/secondaryDashboardFragment"
+        android:name="com.onecall.ui.dashboard.SecondaryDashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_secondary_dashboard" />
+
+    <fragment
+        android:id="@+id/dialpadFragment"
+        android:name="com.onecall.ui.dialpad.DialpadFragment"
+        android:label="Dialpad"
+        tools:layout="@layout/fragment_dialpad" />
+
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="com.onecall.ui.contacts.ContactsFragment"
+        android:label="Contacts"
+        tools:layout="@layout/fragment_contacts" />
+
+    <fragment
+        android:id="@+id/callHistoryFragment"
+        android:name="com.onecall.ui.history.CallHistoryFragment"
+        android:label="Call History"
+        tools:layout="@layout/fragment_call_history" />
+
+    <fragment
+        android:id="@+id/deviceHistoryFragment"
+        android:name="com.onecall.ui.history.DeviceHistoryFragment"
+        android:label="Device History"
+        tools:layout="@layout/fragment_device_history" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.onecall.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settings_to_permissions"
+            app:destination="@id/permissionsFragment" />
+        <action
+            android:id="@+id/action_settings_to_tutorial"
+            app:destination="@id/tutorialFragment" />
+        <action
+            android:id="@+id/action_settings_to_device_settings"
+            app:destination="@id/deviceSettingsFragment" />
+        <action
+            android:id="@+id/action_settings_to_privacy"
+            app:destination="@id/privacyPolicyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/deviceSettingsFragment"
+        android:name="com.onecall.ui.settings.DeviceSettingsFragment"
+        android:label="Device Settings"
+        tools:layout="@layout/fragment_device_settings" />
+
+    <fragment
+        android:id="@+id/privacyPolicyFragment"
+        android:name="com.onecall.ui.privacy.PrivacyPolicyFragment"
+        android:label="Privacy Policy"
+        tools:layout="@layout/fragment_privacy_policy" />
 
 </navigation>

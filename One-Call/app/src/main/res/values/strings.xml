@@ -1,73 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">OneCall</string>
-    <string name="welcome_tagline">Ek SIM, Sab Phone</string>
-    <string name="main_device_setup">Main Device Setup</string>
-    <string name="join_as_secondary_device">Join as Secondary Device</string>
+    <string name="tagline">Ek SIM, Ek Device — Bluetooth Se</string>
+
+    <!-- Welcome -->
+    <string name="btn_main_device_setup">Main Device Setup</string>
+    <string name="btn_join_secondary">Join as Secondary Device</string>
+    <string name="btn_tutorial">Tutorial</string>
+    <string name="already_configured">Already configured as %1$s</string>
+    <string name="go_to_dashboard">Go to Dashboard</string>
+
+    <!-- Permissions -->
+    <string name="permissions_title">Permissions Required</string>
+    <string name="permissions_required_header">Required Permissions</string>
+    <string name="permissions_optional_header">Optional Permissions</string>
+    <string name="btn_grant_all">Grant All Permissions</string>
+    <string name="btn_grant">Grant</string>
+    <string name="btn_skip">Skip</string>
+    <string name="btn_continue">Continue</string>
+    <string name="permission_required_warning">Yeh permission zaroor chahiye — app nahi chalega</string>
+    <string name="permission_optional_info">Yeh feature disabled rahega agar deny karo</string>
+    <string name="permission_bluetooth">Bluetooth</string>
+    <string name="permission_bluetooth_desc">Devices connect karne ke liye</string>
+    <string name="permission_nearby">Nearby Devices</string>
+    <string name="permission_nearby_desc">Bluetooth scan aur connect (Android 12+)</string>
+    <string name="permission_phone">Phone State</string>
+    <string name="permission_phone_desc">Incoming calls detect karne ke liye</string>
+    <string name="permission_microphone">Microphone</string>
+    <string name="permission_microphone_desc">Call audio ke liye</string>
+    <string name="permission_answer_calls">Answer Calls</string>
+    <string name="permission_answer_calls_desc">Calls accept/decline karne ke liye</string>
+    <string name="permission_call_phone">Make Calls</string>
+    <string name="permission_call_phone_desc">Outgoing calls ke liye</string>
+    <string name="permission_location">Location</string>
+    <string name="permission_location_desc">Bluetooth scan (Android 10-11 only)</string>
+    <string name="permission_contacts">Contacts</string>
+    <string name="permission_contacts_desc">Caller naam dikhane ke liye</string>
+    <string name="permission_call_log">Call Log</string>
+    <string name="permission_call_log_desc">Call history save karne ke liye</string>
+    <string name="permission_notifications">Notifications</string>
+    <string name="permission_notifications_desc">Call alerts ke liye</string>
+    <string name="permission_background">Background Activity</string>
+    <string name="permission_background_desc">Boot pe auto-start karne ke liye</string>
+
+    <!-- Tutorial -->
+    <string name="tutorial_skip">Skip</string>
+    <string name="tutorial_next">Next</string>
+    <string name="tutorial_get_started">Get Started</string>
+    <string name="tutorial_card1_title">Welcome to OneCall</string>
+    <string name="tutorial_card1_desc">OneCall aapke ek SIM ko doosre phone pe Bluetooth ke through accessible banata hai. Koi internet nahi — sirf Bluetooth.</string>
+    <string name="tutorial_card2_title">Main Device Setup</string>
+    <string name="tutorial_card2_desc">SIM wale phone pe OneCall kholo. Main Device choose karo. Bluetooth ON karo aur Secondary device ko pair karo.</string>
+    <string name="tutorial_card3_title">Secondary Device Connect</string>
+    <string name="tutorial_card3_desc">Doosre phone pe OneCall kholo. Secondary choose karo. Scan karo aur Main Device ko pair karo.</string>
+    <string name="tutorial_card4_title">Calls on Both Devices</string>
+    <string name="tutorial_card4_desc">SIM pe call aaye toh dono devices pe ring bajegi. Koi bhi uthaa sakta hai. Audio Bluetooth HFP se route hoga.</string>
+    <string name="tutorial_card5_title">You\'re Ready!</string>
+    <string name="tutorial_card5_desc">Setup complete hai. Dashboard pe jao aur OneCall use karna shuru karo.</string>
+
+    <!-- Setup - Main -->
     <string name="main_setup_title">Main Device Setup</string>
+    <string name="main_setup_subtitle">SIM wala phone — Bluetooth AG mode</string>
+    <string name="btn_make_discoverable">Pair Secondary Device</string>
+    <string name="discoverable_hint">Secondary device pe OneCall kholo aur \'Connect to Main Device\' select karo</string>
+    <string name="paired_device_header">Paired Device</string>
+    <string name="btn_forget_device">Forget Device</string>
+    <string name="btn_continue_dashboard">Continue to Dashboard</string>
+    <string name="bluetooth_on">Bluetooth: ON</string>
+    <string name="bluetooth_off">Bluetooth: OFF</string>
+    <string name="btn_enable_bluetooth">Enable Bluetooth</string>
+    <string name="discoverable_countdown">%1$d seconds remaining…</string>
+
+    <!-- Setup - Secondary -->
     <string name="secondary_setup_title">Secondary Device Setup</string>
-    <string name="permissions_screen_title">Permissions</string>
-    <string name="permissions_required_group_title">GROUP 1 — REQUIRED</string>
-    <string name="permissions_required_group_subtitle">Core calling flow ke liye zaroori permissions.</string>
-    <string name="permissions_optional_group_title">GROUP 2 — OPTIONAL</string>
-    <string name="permissions_optional_group_subtitle">In permissions ke bina app chalega, par kuch features missing rahenge.</string>
-    <string name="grant_required_permissions">Grant Required Permissions</string>
-    <string name="skip_permissions">Skip →</string>
-    <string name="permissions_skip_warning">Kuch permissions missing hain. App properly kaam nahi karega. Continue karna chahte ho?</string>
-    <string name="continue_anyway">Continue Anyway</string>
-    <string name="go_back">Go Back</string>
-    <string name="permission_granted">Granted</string>
-    <string name="permission_denied">Denied</string>
-    <string name="required_permissions_missing_warning">%1$d required permissions missing — app sahi kaam nahi karega</string>
-    <string name="main_setup_subtitle">Main device code yahan generate hoga aur local Wi-Fi par share hoga.</string>
-    <string name="copy_code">Copy</string>
-    <string name="copy_code_content_description">Copy code to clipboard</string>
-    <string name="share_code">Share Code</string>
-    <string name="regenerate_code">Regenerate Code</string>
-    <string name="code_expired">Code Expired</string>
-    <string name="code_copied">Code copied</string>
-    <string name="share_code_message">OneCall setup code: %1$s</string>
-    <string name="connected_devices_heading">Connected Devices (%1$d/%2$d)</string>
-    <string name="connected_devices_empty">Koi device connected nahi — code share karo</string>
-    <string name="continue_to_dashboard">Continue to Dashboard</string>
-    <string name="dashboard_placeholder_title">Dashboard</string>
-    <string name="dashboard_placeholder_subtitle">Placeholder dashboard for the main device setup flow.</string>
-    <string name="secondary_connect_info">Dono devices ek hi Wi-Fi pe hone chahiye</string>
-    <string name="secondary_connect_button">Connect</string>
-    <string name="secondary_connecting">Connecting...</string>
-    <string name="secondary_invalid_code">Invalid code. Dobara try karo</string>
-    <string name="secondary_same_wifi_required">Same Wi-Fi pe nahi ho. Pehle same Wi-Fi connect karo</string>
-    <string name="secondary_connected">Connected</string>
-    <string name="secondary_connected_to">Connected to %1$s</string>
-    <string name="sip_service_title">OneCall SIP Service</string>
-    <string name="sip_service_description">Local SIP server is running for OneCall.</string>
-    <string name="sip_service_channel_name">OneCall SIP</string>
+    <string name="secondary_setup_subtitle">Connect to Main Device</string>
+    <string name="btn_scan_devices">Scan for Main Device</string>
+    <string name="nearby_devices_header">Nearby Devices</string>
+    <string name="btn_connect">Connect</string>
+    <string name="auto_connecting">Already paired — Auto connecting…</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_sim_active">SIM: Active</string>
+    <string name="connected_device_header">Connected Device</string>
+    <string name="btn_stop_calls">Stop Calls</string>
+    <string name="btn_disconnect">Disconnect</string>
+    <string name="btn_reconnect">Reconnect</string>
+    <string name="connected_to">Connected to: %1$s</string>
+    <string name="state_connected">Connected</string>
+    <string name="state_disconnected">Disconnected</string>
+    <string name="state_connecting">Connecting…</string>
+
+    <!-- Incoming Call -->
     <string name="incoming_call_title">Incoming Call</string>
-    <string name="caller_unknown">Unknown caller</string>
-    <string name="caller_unknown_number">Unknown number</string>
-    <string name="ringing_on_devices">Ringing on %1$d devices</string>
-    <string name="accept_call">Accept</string>
-    <string name="decline_call">Decline</string>
-    <string name="call_active_title">Call Active</string>
-    <string name="call_active_subtitle">Call in progress</string>
-    <string name="call_active_timer_default">00:00</string>
-    <string name="device_indicator">You are on: %1$s</string>
-    <string name="mute_label">Mute</string>
-    <string name="speaker_label">Speaker</string>
-    <string name="transfer_label">Transfer</string>
-    <string name="transfer_call_title">Transfer call</string>
-    <string name="transfer_empty_state">No available devices</string>
-    <string name="transfer_device_online">Online</string>
-    <string name="transfer_sent">Transfer request sent to %1$s</string>
-    <string name="transfer_rejected">Transfer rejected by %1$s</string>
-    <string name="transfer_accepted">Transfer accepted by %1$s</string>
-    <string name="transfer_unavailable">Transfer available on main device only</string>
-    <string name="transfer_no_devices">No devices available for transfer</string>
-    <string name="transfer_failed">Unable to send transfer request</string>
-    <string name="audio_setup_failed">Audio setup failed</string>
-    <string name="transfer_notification_title">%1$s call transfer karna chahta hai</string>
-    <string name="transfer_notification_body">Caller: %1$s</string>
-    <string name="transfer_accept">Accept</string>
-    <string name="transfer_reject">Reject</string>
-    <string name="end_call">End Call</string>
+    <string name="ringing_on_two">Ringing on 2 devices</string>
+    <string name="ringing_on_one">Ringing on this device</string>
+    <string name="btn_decline">Decline</string>
+    <string name="btn_accept">Accept</string>
+    <string name="unknown_caller">Unknown</string>
+
+    <!-- Active Call -->
+    <string name="in_call_title">In Call</string>
+    <string name="btn_mute">Mute</string>
+    <string name="btn_unmute">Unmute</string>
+    <string name="btn_speaker">Speaker</string>
+    <string name="btn_transfer">Transfer</string>
+    <string name="btn_end_call">End Call</string>
+    <string name="transfer_title">Transfer Call</string>
+    <string name="transfer_to">Transfer to %1$s</string>
+    <string name="transfer_rejected">Transfer rejected</string>
+    <string name="audio_issue">Audio issue. Headset check karo</string>
+
+    <!-- Dialpad -->
+    <string name="dialpad_title">Dialpad</string>
+    <string name="btn_call">Call</string>
+    <string name="outgoing_request_title">Outgoing Call Request</string>
+    <string name="outgoing_request_msg">%1$s call karna chahta hai:\n%2$s</string>
+    <string name="btn_allow">Allow</string>
+    <string name="btn_block">Block</string>
+    <string name="call_blocked">Call blocked</string>
+
+    <!-- Contacts -->
+    <string name="contacts_title">Contacts</string>
+    <string name="contacts_search_hint">Search contacts…</string>
+    <string name="no_contacts">No contacts found</string>
+
+    <!-- Call History -->
+    <string name="call_history_title">Call History</string>
+    <string name="device_history_title">Device History</string>
+    <string name="filter_all">All</string>
+    <string name="filter_missed">Missed</string>
+    <string name="filter_incoming">Incoming</string>
+    <string name="filter_outgoing">Outgoing</string>
+    <string name="no_history">No call history</string>
+    <string name="session_only_note">Session only — resets on app restart</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_my_device">My Device</string>
+    <string name="settings_bluetooth">Bluetooth</string>
+    <string name="settings_calls">Calls</string>
+    <string name="settings_storage">Storage</string>
+    <string name="settings_about">About</string>
+    <string name="device_nickname">Device Nickname</string>
+    <string name="device_icon">Device Icon</string>
+    <string name="paired_device_label">Paired Device</string>
+    <string name="forget_unpair">Forget &amp; Unpair</string>
+    <string name="auto_reconnect">Auto Reconnect</string>
+    <string name="hd_voice">HD Voice</string>
+    <string name="auto_approve_outgoing">Auto-approve Outgoing Calls</string>
+    <string name="notify_outgoing">Notify on Outgoing Call</string>
+    <string name="clear_call_history">Clear Call History</string>
+    <string name="clear_device_history">Clear Device History</string>
+    <string name="open_tutorial">Tutorial</string>
+    <string name="open_permissions">Permissions</string>
+    <string name="app_version">App Version</string>
+    <string name="privacy_note">Koi data internet pe nahi jaata — fully offline</string>
+    <string name="history_cleared">History cleared</string>
+    <string name="nickname_updated">Nickname updated</string>
+
+    <!-- Device Settings -->
+    <string name="device_settings_title">Device Settings</string>
+    <string name="ring_on_device">Ring on this Device</string>
+    <string name="allow_outgoing">Allow Outgoing Calls</string>
+    <string name="do_not_disturb">Do Not Disturb</string>
+
+    <!-- Privacy Policy -->
+    <string name="privacy_policy_title">Privacy Policy</string>
+
+    <!-- Error Messages -->
+    <string name="error_bluetooth_off">Bluetooth OFF hai — please ON karo</string>
+    <string name="error_hfp_failed">Connection failed. Unpair karke dobara try karo</string>
+    <string name="error_pairing_failed">Pairing failed. Dobara try karo</string>
+    <string name="error_rfcomm_failed">Connection dropped — reconnecting…</string>
+    <string name="btn_retry">Retry</string>
+    <string name="btn_scan_again">Scan Again</string>
+
+    <!-- Notification -->
+    <string name="notification_channel_name">OneCall Service</string>
+    <string name="notification_channel_desc">OneCall is running to route your SIM calls over Bluetooth</string>
+    <string name="notification_active">OneCall active</string>
+    <string name="notification_connected">Connected: %1$s</string>
+    <string name="notification_disconnected">Disconnected — waiting for device</string>
+    <string name="notification_incoming_call">Incoming call from %1$s</string>
+
+    <!-- Nav -->
+    <string name="nav_dialpad">Dialpad</string>
+    <string name="nav_contacts">Contacts</string>
+    <string name="nav_history">History</string>
+    <string name="nav_settings">Settings</string>
 </resources>

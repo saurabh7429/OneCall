@@ -1,124 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/onecall_background"
-    tools:context=".ui.calls.IncomingCallActivity">
+    android:background="@drawable/bg_incoming_call">
 
-    <ImageView
-        android:id="@+id/incomingCallerAvatar"
+    <!-- Caller Info -->
+    <TextView
+        android:id="@+id/tv_incoming_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/incoming_call_title"
+        android:textSize="16sp"
+        android:textColor="@color/text_secondary"
+        android:textAllCaps="true"
+        android:letterSpacing="0.2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="80dp" />
+
+    <!-- Avatar Circle -->
+    <FrameLayout
+        android:id="@+id/fl_avatar"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/bg_caller_avatar_circle"
-        android:contentDescription="@string/incoming_call_title"
-        android:scaleType="centerInside"
-        android:src="@android:drawable/ic_menu_myplaces"
-        android:tint="@color/onecall_blue"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_incoming_label"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp">
+
+        <View
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/bg_circular_action"
+            android:layout_gravity="center" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_phone_call"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
 
     <TextView
-        android:id="@+id/incomingCallerNameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/onecall_blue_dark"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/incomingCallerAvatar"
-        tools:text="Caller Name" />
-
-    <TextView
-        android:id="@+id/incomingCallerNumberText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:textColor="@color/onecall_gray"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/incomingCallerNameText"
-        tools:text="+91 98765 43210" />
-
-    <TextView
-        android:id="@+id/incomingRingingCountText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:textColor="@color/onecall_gray"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/incomingCallerNumberText"
-        tools:text="Ringing on 2 devices" />
-
-    <LinearLayout
-        android:id="@+id/incomingCallActions"
+        android:id="@+id/tv_caller_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:text="@string/unknown_caller"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
         android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fl_avatar"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="24dp" />
 
+    <TextView
+        android:id="@+id/tv_caller_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/text_secondary"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tv_caller_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tv_ringing_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ringing_on_two"
+        android:textSize="14sp"
+        android:textColor="@color/status_ringing"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tv_caller_number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Call Buttons -->
+    <LinearLayout
+        android:id="@+id/ll_call_buttons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Decline -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="40dp"
+            android:orientation="vertical"
             android:gravity="center"
-            android:orientation="vertical">
+            android:layout_marginEnd="60dp">
 
-            <ImageButton
-                android:id="@+id/incomingDeclineButton"
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                android:background="@drawable/bg_call_decline_circle"
-                android:contentDescription="@string/decline_call"
-                android:scaleType="centerInside"
-                android:src="@android:drawable/ic_menu_close_clear_cancel"
-                android:tint="@color/onecall_white" />
+            <FrameLayout
+                android:id="@+id/btn_decline"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/bg_circular_decline"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_phone_end"
+                    android:layout_gravity="center" />
+
+            </FrameLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/decline_call"
-                android:textColor="@color/onecall_gray"
-                android:textSize="14sp" />
+                android:text="@string/btn_decline"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="8dp" />
+
         </LinearLayout>
 
+        <!-- Accept -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center">
 
-            <ImageButton
-                android:id="@+id/incomingAcceptButton"
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                android:background="@drawable/bg_call_accept_circle"
-                android:contentDescription="@string/accept_call"
-                android:scaleType="centerInside"
-                android:src="@android:drawable/ic_menu_call"
-                android:tint="@color/onecall_white" />
+            <FrameLayout
+                android:id="@+id/btn_accept"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/bg_circular_accept"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_phone_call"
+                    android:layout_gravity="center" />
+
+            </FrameLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/accept_call"
-                android:textColor="@color/onecall_gray"
-                android:textSize="14sp" />
+                android:text="@string/btn_accept"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="8dp" />
+
         </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

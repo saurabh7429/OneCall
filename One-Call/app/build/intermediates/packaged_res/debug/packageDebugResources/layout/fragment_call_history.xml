@@ -1,87 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/onecall_background">
+    android:orientation="vertical"
+    android:background="@color/bg_dark"
+    android:padding="24dp">
 
-    <LinearLayout
-        android:id="@+id/ll_filters"
-        android:layout_width="0dp"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_clear_all"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:text="@string/call_history_title"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_marginBottom="16dp" />
 
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/chip_group_filter"
+    <!-- Filter chips -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:singleSelection="true">
+            android:text="@string/filter_all"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:checked="true" />
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_all"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="All" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_missed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_missed"
+            style="@style/Widget.MaterialComponents.Chip.Filter" />
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_incoming"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Incoming" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_incoming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_incoming"
+            style="@style/Widget.MaterialComponents.Chip.Filter" />
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_outgoing"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Outgoing" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_outgoing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_outgoing"
+            style="@style/Widget.MaterialComponents.Chip.Filter" />
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_missed"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Missed" />
-        </com.google.android.material.chip.ChipGroup>
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_clear_all"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Clear All"
-        app:layout_constraintBottom_toBottomOf="@+id/ll_filters"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ll_filters" />
+    </com.google.android.material.chip.ChipGroup>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_call_history"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll_filters"
-        tools:listitem="@layout/item_call_history" />
+        android:layout_weight="1" />
 
     <TextView
-        android:id="@+id/tv_empty_history"
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_no_history"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No call history"
-        android:textColor="@color/onecall_gray"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_filters" />
+        android:text="@string/no_history"
+        android:textSize="16sp"
+        android:textColor="@color/text_hint"
+        android:gravity="center"
+        android:layout_marginTop="32dp"
+        android:visibility="gone" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
