@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="onecall_blue">#1E88E5</color>
+    <color name="onecall_blue_dark">#1565C0</color>
+    <color name="onecall_gray">#757575</color>
+    <color name="onecall_background">#FFFFFF</color>
+    <color name="onecall_placeholder">#EAF2FF</color>
+    <color name="onecall_white">#FFFFFF</color>
+    <color name="onecall_success">#2E7D32</color>
+    <color name="onecall_error">#C62828</color>
+    <color name="onecall_warning_background">#FFF8D6</color>
+    <color name="onecall_warning_border">#E0B300</color>
+    <color name="onecall_warning_text">#7A5C00</color>
+    <color name="onecall_card_stroke">#D7E3F4</color>
+    <color name="onecall_optional_hint">#6B7280</color>
+    <color name="onecall_text_primary">#212121</color>
+    <color name="onecall_text_secondary">#757575</color>
+    <color name="onecall_surface">#FFFFFF</color>
+</resources>

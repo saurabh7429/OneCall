@@ -1,0 +1,263 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.onecall"
+4    android:versionCode="1"
+5    android:versionName="0.1" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+11-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:3:5-75
+11-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:3:22-72
+12    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+12-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:4:5-71
+12-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:4:22-68
+13    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+13-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:5:5-80
+13-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:5:22-77
+14    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+14-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:6:5-77
+14-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:6:22-74
+15    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+15-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:7:5-87
+15-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:7:22-84
+16    <uses-permission android:name="android.permission.INTERNET" />
+16-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:8:5-67
+16-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:8:22-64
+17    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+17-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:9:5-76
+17-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:9:22-73
+18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+18-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:10:5-79
+18-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:10:22-76
+19    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+19-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:11:5-77
+19-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:11:22-74
+20    <uses-permission android:name="android.permission.CALL_PHONE" />
+20-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:12:5-69
+20-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:12:22-66
+21    <uses-permission android:name="android.permission.MANAGE_OWN_CALLS" />
+21-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:13:5-75
+21-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:13:22-72
+22    <uses-permission android:name="android.permission.READ_CONTACTS" />
+22-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:14:5-72
+22-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:14:22-69
+23    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+23-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:15:5-72
+23-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:15:22-69
+24    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+24-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:16:5-73
+24-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:16:22-70
+25    <uses-permission android:name="android.permission.VIBRATE" />
+25-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:17:5-66
+25-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:17:22-63
+26    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+26-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:18:5-81
+26-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:18:22-78
+27    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+27-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:19:5-77
+27-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:19:22-74
+28    <uses-permission android:name="android.permission.WAKE_LOCK" />
+28-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:20:5-68
+28-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:20:22-65
+29    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+29-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:21:5-95
+29-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:21:22-92
+30
+31    <permission
+31-->[androidx.core:core:1.13.1] /home/saurabh/.gradle/caches/transforms-4/9eecc95db64c8045701a1f54574ce26e/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+32        android:name="com.onecall.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+32-->[androidx.core:core:1.13.1] /home/saurabh/.gradle/caches/transforms-4/9eecc95db64c8045701a1f54574ce26e/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+33        android:protectionLevel="signature" />
+33-->[androidx.core:core:1.13.1] /home/saurabh/.gradle/caches/transforms-4/9eecc95db64c8045701a1f54574ce26e/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+34
+35    <uses-permission android:name="com.onecall.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+35-->[androidx.core:core:1.13.1] /home/saurabh/.gradle/caches/transforms-4/9eecc95db64c8045701a1f54574ce26e/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+35-->[androidx.core:core:1.13.1] /home/saurabh/.gradle/caches/transforms-4/9eecc95db64c8045701a1f54574ce26e/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+36
+37    <application
+37-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:23:5-74:19
+38        android:allowBackup="true"
+38-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:24:9-35
+39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+39-->[androidx.core:core:1.13.1] /home/saurabh/.gradle/caches/transforms-4/9eecc95db64c8045701a1f54574ce26e/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+40        android:debuggable="true"
+41        android:extractNativeLibs="false"
+42        android:label="OneCall"
+42-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:25:9-32
+43        android:supportsRtl="true"
+43-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:27:9-35
+44        android:theme="@style/Theme.OneCall" >
+44-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:26:9-45
+45        <activity
+45-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:29:9-32:20
+46            android:name="com.onecall.MainActivity"
+46-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:30:13-41
+47            android:exported="true" >
+47-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:31:13-36
+48        </activity>
+49        <activity
+49-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:34:9-37:46
+50            android:name="com.onecall.ui.calls.IncomingCallActivity"
+50-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:35:13-58
+51            android:exported="false"
+51-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:36:13-37
+52            android:launchMode="singleTop" />
+52-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:37:13-43
+53        <activity
+53-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:39:9-42:46
+54            android:name="com.onecall.ui.calls.CallActiveActivity"
+54-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:40:13-56
+55            android:exported="false"
+55-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:41:13-37
+56            android:launchMode="singleTop" />
+56-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:42:13-43
+57
+58        <receiver
+58-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:44:9-46:40
+59            android:name="com.onecall.ui.calls.CallTransferActionReceiver"
+59-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:45:13-64
+60            android:exported="false" />
+60-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:46:13-37
+61
+62        <service
+62-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:48:9-51:56
+63            android:name="com.onecall.service.SipServerService"
+63-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:49:13-53
+64            android:exported="false"
+64-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:50:13-37
+65            android:foregroundServiceType="dataSync" />
+65-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:51:13-53
+66        <service
+66-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:53:9-56:56
+67            android:name="com.onecall.service.OneCallBackgroundService"
+67-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:54:13-61
+68            android:exported="false"
+68-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:55:13-37
+69            android:foregroundServiceType="dataSync" />
+69-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:56:13-53
+70
+71        <receiver
+71-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:58:9-64:20
+72            android:name="com.onecall.receivers.BootReceiver"
+72-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:59:13-51
+73            android:exported="true" >
+73-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:60:13-36
+74            <intent-filter>
+74-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:61:13-63:29
+75                <action android:name="android.intent.action.BOOT_COMPLETED" />
+75-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:62:17-79
+75-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:62:25-76
+76            </intent-filter>
+77        </receiver>
+78
+79        <activity
+79-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:66:9-73:20
+80            android:name="com.onecall.ui.tutorial.TutorialActivity"
+80-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:67:13-57
+81            android:exported="true" >
+81-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:68:13-36
+82            <intent-filter>
+82-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:69:13-72:29
+83                <action android:name="android.intent.action.MAIN" />
+83-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:70:17-69
+83-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:70:25-66
+84
+85                <category android:name="android.intent.category.LAUNCHER" />
+85-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:71:17-77
+85-->/home/saurabh/Desktop/One-Call/app/src/main/AndroidManifest.xml:71:27-74
+86            </intent-filter>
+87        </activity>
+88
+89        <provider
+89-->[androidx.emoji2:emoji2:1.3.0] /home/saurabh/.gradle/caches/transforms-4/2322af85bed02a99eb78397d1910542e/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+90            android:name="androidx.startup.InitializationProvider"
+90-->[androidx.emoji2:emoji2:1.3.0] /home/saurabh/.gradle/caches/transforms-4/2322af85bed02a99eb78397d1910542e/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+91            android:authorities="com.onecall.androidx-startup"
+91-->[androidx.emoji2:emoji2:1.3.0] /home/saurabh/.gradle/caches/transforms-4/2322af85bed02a99eb78397d1910542e/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+92            android:exported="false" >
+92-->[androidx.emoji2:emoji2:1.3.0] /home/saurabh/.gradle/caches/transforms-4/2322af85bed02a99eb78397d1910542e/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+93            <meta-data
+93-->[androidx.emoji2:emoji2:1.3.0] /home/saurabh/.gradle/caches/transforms-4/2322af85bed02a99eb78397d1910542e/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+94                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+94-->[androidx.emoji2:emoji2:1.3.0] /home/saurabh/.gradle/caches/transforms-4/2322af85bed02a99eb78397d1910542e/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+95                android:value="androidx.startup" />
+95-->[androidx.emoji2:emoji2:1.3.0] /home/saurabh/.gradle/caches/transforms-4/2322af85bed02a99eb78397d1910542e/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+96            <meta-data
+96-->[androidx.lifecycle:lifecycle-process:2.8.4] /home/saurabh/.gradle/caches/transforms-4/20233f6d93dc2f9b51dd86846c6d5d36/transformed/lifecycle-process-2.8.4/AndroidManifest.xml:29:13-31:52
+97                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+97-->[androidx.lifecycle:lifecycle-process:2.8.4] /home/saurabh/.gradle/caches/transforms-4/20233f6d93dc2f9b51dd86846c6d5d36/transformed/lifecycle-process-2.8.4/AndroidManifest.xml:30:17-78
+98                android:value="androidx.startup" />
+98-->[androidx.lifecycle:lifecycle-process:2.8.4] /home/saurabh/.gradle/caches/transforms-4/20233f6d93dc2f9b51dd86846c6d5d36/transformed/lifecycle-process-2.8.4/AndroidManifest.xml:31:17-49
+99            <meta-data
+99-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+100                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+100-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+101                android:value="androidx.startup" />
+101-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+102        </provider>
+103
+104        <uses-library
+104-->[androidx.window:window:1.0.0] /home/saurabh/.gradle/caches/transforms-4/2302d49b5d2f096871674c3f2f3a8b46/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+105            android:name="androidx.window.extensions"
+105-->[androidx.window:window:1.0.0] /home/saurabh/.gradle/caches/transforms-4/2302d49b5d2f096871674c3f2f3a8b46/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+106            android:required="false" />
+106-->[androidx.window:window:1.0.0] /home/saurabh/.gradle/caches/transforms-4/2302d49b5d2f096871674c3f2f3a8b46/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+107        <uses-library
+107-->[androidx.window:window:1.0.0] /home/saurabh/.gradle/caches/transforms-4/2302d49b5d2f096871674c3f2f3a8b46/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+108            android:name="androidx.window.sidecar"
+108-->[androidx.window:window:1.0.0] /home/saurabh/.gradle/caches/transforms-4/2302d49b5d2f096871674c3f2f3a8b46/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+109            android:required="false" />
+109-->[androidx.window:window:1.0.0] /home/saurabh/.gradle/caches/transforms-4/2302d49b5d2f096871674c3f2f3a8b46/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+110
+111        <service
+111-->[androidx.room:room-runtime:2.6.1] /home/saurabh/.gradle/caches/transforms-4/c1fcbed862ce038c28ef4711d8a754a8/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+112            android:name="androidx.room.MultiInstanceInvalidationService"
+112-->[androidx.room:room-runtime:2.6.1] /home/saurabh/.gradle/caches/transforms-4/c1fcbed862ce038c28ef4711d8a754a8/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+113            android:directBootAware="true"
+113-->[androidx.room:room-runtime:2.6.1] /home/saurabh/.gradle/caches/transforms-4/c1fcbed862ce038c28ef4711d8a754a8/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+114            android:exported="false" />
+114-->[androidx.room:room-runtime:2.6.1] /home/saurabh/.gradle/caches/transforms-4/c1fcbed862ce038c28ef4711d8a754a8/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+115
+116        <receiver
+116-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+117            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+118            android:directBootAware="false"
+118-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+119            android:enabled="true"
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+120            android:exported="true"
+120-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+121            android:permission="android.permission.DUMP" >
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+122            <intent-filter>
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+123                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+123-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+123-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+124            </intent-filter>
+125            <intent-filter>
+125-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+126                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+127            </intent-filter>
+128            <intent-filter>
+128-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+129                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+130            </intent-filter>
+131            <intent-filter>
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+132                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+132-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+132-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/saurabh/.gradle/caches/transforms-4/dfa9c410470f18ab7d0c1da3b0cb719a/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+133            </intent-filter>
+134        </receiver>
+135    </application>
+136
+137</manifest>

@@ -1,0 +1,182 @@
+[
+    {
+        "merged": "com.onecall.app-debug-52:/drawable_bg_secondary_code_box.xml.flat",
+        "source": "com.onecall.app-main-54:/drawable/bg_secondary_code_box.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/drawable_bg_secondary_code_box_error.xml.flat",
+        "source": "com.onecall.app-main-54:/drawable/bg_secondary_code_box_error.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/drawable_bg_call_decline_circle.xml.flat",
+        "source": "com.onecall.app-main-54:/drawable/bg_call_decline_circle.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_activity_tutorial.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/activity_tutorial.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/drawable_bg_call_accept_circle.xml.flat",
+        "source": "com.onecall.app-main-54:/drawable/bg_call_accept_circle.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.onecall.app-main-54:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_fragment_secondary_setup.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/fragment_secondary_setup.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/drawable_bg_call_action_selector.xml.flat",
+        "source": "com.onecall.app-main-54:/drawable/bg_call_action_selector.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_item_device_history.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/item_device_history.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/color_call_action_tint.xml.flat",
+        "source": "com.onecall.app-main-54:/color/call_action_tint.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_fragment_call_history.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/fragment_call_history.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_fragment_contacts.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/fragment_contacts.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_fragment_history_parent.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/fragment_history_parent.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_item_tutorial_card.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/item_tutorial_card.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_activity_incoming_call.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/activity_incoming_call.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_fragment_permissions.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/fragment_permissions.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_item_setup_connected_device.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/item_setup_connected_device.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/drawable_bg_status_online.xml.flat",
+        "source": "com.onecall.app-main-54:/drawable/bg_status_online.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_bottom_sheet_transfer.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/bottom_sheet_transfer.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_item_call_history.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/item_call_history.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_fragment_dialpad.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/fragment_dialpad.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/drawable_bg_logo_placeholder.xml.flat",
+        "source": "com.onecall.app-main-54:/drawable/bg_logo_placeholder.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_activity_call_active.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/activity_call_active.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_item_connected_device.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/item_connected_device.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_item_transfer_device.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/item_transfer_device.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/navigation_nav_graph.xml.flat",
+        "source": "com.onecall.app-main-54:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_fragment_dashboard.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/drawable_bg_caller_avatar_circle.xml.flat",
+        "source": "com.onecall.app-main-54:/drawable/bg_caller_avatar_circle.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/drawable_bg_call_action_on.xml.flat",
+        "source": "com.onecall.app-main-54:/drawable/bg_call_action_on.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_fragment_main_setup.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/fragment_main_setup.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_fragment_device_settings.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/fragment_device_settings.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/drawable_bg_code_digit_box.xml.flat",
+        "source": "com.onecall.app-main-54:/drawable/bg_code_digit_box.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/menu_bottom_nav_secondary_menu.xml.flat",
+        "source": "com.onecall.app-main-54:/menu/bottom_nav_secondary_menu.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_fragment_device_history.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/fragment_device_history.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_activity_main.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_fragment_home_dashboard.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/fragment_home_dashboard.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/drawable_shape_dot.xml.flat",
+        "source": "com.onecall.app-main-54:/drawable/shape_dot.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_item_dialpad_key.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/item_dialpad_key.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_item_contact.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/item_contact.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_fragment_welcome.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/fragment_welcome.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_item_permission_row.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/item_permission_row.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/drawable_shape_pill.xml.flat",
+        "source": "com.onecall.app-main-54:/drawable/shape_pill.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/drawable_shape_circle_blue.xml.flat",
+        "source": "com.onecall.app-main-54:/drawable/shape_circle_blue.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/drawable_bg_call_action_off.xml.flat",
+        "source": "com.onecall.app-main-54:/drawable/bg_call_action_off.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_fragment_app_settings.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/fragment_app_settings.xml"
+    }
+]

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/bg_secondary_code_box"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/iv_device_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_menu_agenda"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/onecall_blue" />
+
+    <TextView
+        android:id="@+id/tv_device_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/onecall_blue_dark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_device_icon"
+        app:layout_constraintTop_toTopOf="@+id/iv_device_icon"
+        tools:text="Kitchen Phone" />
+
+    <TextView
+        android:id="@+id/tv_device_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/iv_device_icon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_device_name"
+        tools:text="Connected"
+        tools:textColor="@color/onecall_success" />
+
+    <TextView
+        android:id="@+id/tv_dates"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/onecall_gray"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/iv_device_icon"
+        app:layout_constraintTop_toBottomOf="@+id/iv_device_icon"
+        tools:text="First seen: 12 Jan\nLast seen: 14 Jan 10:00 AM" />
+
+    <TextView
+        android:id="@+id/tv_stats"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/onecall_gray"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/iv_device_icon"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dates"
+        tools:text="Calls Attended: 5 | Calls Made: 2" />
+
+    <Button
+        android:id="@+id/btn_remove_device"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Remove from History"
+        android:textColor="@color/onecall_error"
+        app:strokeColor="@color/onecall_error"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_stats" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

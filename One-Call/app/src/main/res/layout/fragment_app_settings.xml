@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/onecall_background"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- MY DEVICE SECTION -->
+        <TextView
+            android:id="@+id/tv_section_my_device"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MY DEVICE"
+            android:textColor="@color/onecall_blue"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_my_device_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Device Name"
+            app:layout_constraintTop_toBottomOf="@id/tv_section_my_device">
+            
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_my_device_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        
+        <TextView
+            android:id="@+id/tv_my_icon_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="My Device Icon"
+            android:textColor="@color/onecall_text_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_my_device_name" />
+
+        <Spinner
+            android:id="@+id/spinner_my_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:minHeight="48dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_my_icon_label" />
+
+        <!-- NETWORK SECTION (MAIN ONLY) -->
+        <LinearLayout
+            android:id="@+id/ll_network_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/spinner_my_icon">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NETWORK (Main Device Only)"
+                android:textColor="@color/onecall_blue"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Max Devices (1-10)">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_max_devices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_auto_reconnect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Auto Reconnect Devices"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Pairing Code Expiry (Minutes)"
+                android:textColor="@color/onecall_text_primary" />
+
+            <Spinner
+                android:id="@+id/spinner_expiry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minHeight="48dp" />
+                
+            <!-- CALLS SECTION -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="CALLS (Main Device Only)"
+                android:textColor="@color/onecall_blue"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_global_auto_approve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Global Auto-Approve Outgoing"
+                android:textSize="16sp" />
+                
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_notify_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Notify on Main when secondary calls"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- STORAGE SECTION -->
+        <TextView
+            android:id="@+id/tv_section_storage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="STORAGE"
+            android:textColor="@color/onecall_blue"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_network_section" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_clear_call_history"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Clear Call History"
+            android:textColor="@color/onecall_error"
+            app:strokeColor="@color/onecall_error"
+            app:layout_constraintTop_toBottomOf="@id/tv_section_storage" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_clear_device_history"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Clear Device History"
+            android:textColor="@color/onecall_error"
+            app:strokeColor="@color/onecall_error"
+            app:layout_constraintTop_toBottomOf="@id/btn_clear_call_history" />
+
+        <!-- ABOUT SECTION -->
+        <TextView
+            android:id="@+id/tv_section_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ABOUT AND SYSTEM"
+            android:textColor="@color/onecall_blue"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_clear_device_history" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_battery_opt"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Disable Battery Optimization"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_section_about" />
+
+        <TextView
+            android:id="@+id/tv_battery_warning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Warning: App may be killed by system if battery optimization is enabled."
+            android:textColor="@color/onecall_warning_text"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/btn_battery_opt" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_tutorial"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="How it Works (Tutorial)"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_battery_warning" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Settings"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_tutorial" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="Yeh app sirf local Wi-Fi use karta hai. Koi data bahar nahi jata."
+            android:textColor="@color/onecall_gray"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_save_settings" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

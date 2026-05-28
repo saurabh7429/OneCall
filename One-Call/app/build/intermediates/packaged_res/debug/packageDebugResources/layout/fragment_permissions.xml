@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/onecall_background"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".ui.screens.PermissionsFragment">
+
+    <TextView
+        android:id="@+id/permissionsTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/permissions_screen_title"
+        android:textColor="@color/onecall_blue"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/permissionsWarningBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/onecall_warning_background"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/onecall_warning_border"
+        app:strokeWidth="1dp">
+
+        <TextView
+            android:id="@+id/permissionsWarningText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="14dp"
+            android:textColor="@color/onecall_warning_text"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="2 required permissions missing — app sahi kaam nahi karega" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:overScrollMode="ifContentScrolls">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/permissions_required_group_title"
+                android:textColor="@color/onecall_blue_dark"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/permissions_required_group_subtitle"
+                android:textColor="@color/onecall_gray"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/requiredPermissionsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/permissions_optional_group_title"
+                android:textColor="@color/onecall_blue_dark"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/permissions_optional_group_subtitle"
+                android:textColor="@color/onecall_gray"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/optionalPermissionsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/grantRequiredPermissionsButton"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:text="@string/grant_required_permissions"
+            android:textAllCaps="false"
+            android:textColor="@color/onecall_white"
+            app:backgroundTint="@color/onecall_blue"
+            app:cornerRadius="14dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/skipPermissionsButton"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:text="@string/skip_permissions"
+            android:textAllCaps="false"
+            android:textColor="@color/onecall_blue"
+            app:cornerRadius="14dp"
+            app:strokeColor="@color/onecall_blue"
+            app:strokeWidth="1.5dp" />
+    </LinearLayout>
+
+</LinearLayout>

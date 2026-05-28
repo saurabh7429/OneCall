@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.OneCall" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/onecall_blue</item>
+        <item name="colorSecondary">@color/onecall_blue_dark</item>
+        <item name="colorTertiary">@color/onecall_blue_dark</item>
+        <item name="android:statusBarColor">@color/onecall_background</item>
+        <item name="android:navigationBarColor">@color/onecall_background</item>
+        <item name="android:windowBackground">@color/onecall_background</item>
+    </style>
+</resources>

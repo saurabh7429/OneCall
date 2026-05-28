@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.onecall.ui.screens.WelcomeFragment"
+        android:label="@string/app_name">
+        <action
+            android:id="@+id/action_welcomeFragment_to_mainSetupFragment"
+            app:destination="@id/mainSetupFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_secondarySetupFragment"
+            app:destination="@id/secondarySetupFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainSetupFragment"
+        android:name="com.onecall.ui.screens.MainSetupFragment"
+        android:label="@string/main_device_setup">
+        <action
+            android:id="@+id/action_mainSetupFragment_to_permissionsFragment"
+            app:destination="@id/permissionsFragment" />
+        <action
+            android:id="@+id/action_mainSetupFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondarySetupFragment"
+        android:name="com.onecall.ui.screens.SecondarySetupFragment"
+        android:label="@string/join_as_secondary_device">
+        <action
+            android:id="@+id/action_secondarySetupFragment_to_permissionsFragment"
+            app:destination="@id/permissionsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/permissionsFragment"
+        android:name="com.onecall.ui.screens.PermissionsFragment"
+        android:label="@string/permissions_screen_title" />
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.onecall.ui.screens.DashboardFragment"
+        android:label="@string/dashboard_placeholder_title" />
+
+</navigation>
