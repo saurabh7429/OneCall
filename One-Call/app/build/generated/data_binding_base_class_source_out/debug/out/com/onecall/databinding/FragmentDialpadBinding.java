@@ -5,10 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.button.MaterialButton;
@@ -19,7 +21,7 @@ import java.lang.String;
 
 public final class FragmentDialpadBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
   public final MaterialButton btn0;
@@ -64,14 +66,21 @@ public final class FragmentDialpadBinding implements ViewBinding {
   public final MaterialButton btnStar;
 
   @NonNull
+  public final GridLayout gridDialpad;
+
+  @NonNull
+  public final LinearLayout rowCallActions;
+
+  @NonNull
   public final TextView tvNumber;
 
-  private FragmentDialpadBinding(@NonNull LinearLayout rootView, @NonNull MaterialButton btn0,
+  private FragmentDialpadBinding(@NonNull ConstraintLayout rootView, @NonNull MaterialButton btn0,
       @NonNull MaterialButton btn1, @NonNull MaterialButton btn2, @NonNull MaterialButton btn3,
       @NonNull MaterialButton btn4, @NonNull MaterialButton btn5, @NonNull MaterialButton btn6,
       @NonNull MaterialButton btn7, @NonNull MaterialButton btn8, @NonNull MaterialButton btn9,
       @NonNull MaterialButton btnBackspace, @NonNull FrameLayout btnCall,
       @NonNull MaterialButton btnHash, @NonNull MaterialButton btnStar,
+      @NonNull GridLayout gridDialpad, @NonNull LinearLayout rowCallActions,
       @NonNull TextView tvNumber) {
     this.rootView = rootView;
     this.btn0 = btn0;
@@ -88,12 +97,14 @@ public final class FragmentDialpadBinding implements ViewBinding {
     this.btnCall = btnCall;
     this.btnHash = btnHash;
     this.btnStar = btnStar;
+    this.gridDialpad = gridDialpad;
+    this.rowCallActions = rowCallActions;
     this.tvNumber = tvNumber;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -202,14 +213,27 @@ public final class FragmentDialpadBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.grid_dialpad;
+      GridLayout gridDialpad = ViewBindings.findChildViewById(rootView, id);
+      if (gridDialpad == null) {
+        break missingId;
+      }
+
+      id = R.id.row_call_actions;
+      LinearLayout rowCallActions = ViewBindings.findChildViewById(rootView, id);
+      if (rowCallActions == null) {
+        break missingId;
+      }
+
       id = R.id.tv_number;
       TextView tvNumber = ViewBindings.findChildViewById(rootView, id);
       if (tvNumber == null) {
         break missingId;
       }
 
-      return new FragmentDialpadBinding((LinearLayout) rootView, btn0, btn1, btn2, btn3, btn4, btn5,
-          btn6, btn7, btn8, btn9, btnBackspace, btnCall, btnHash, btnStar, tvNumber);
+      return new FragmentDialpadBinding((ConstraintLayout) rootView, btn0, btn1, btn2, btn3, btn4,
+          btn5, btn6, btn7, btn8, btn9, btnBackspace, btnCall, btnHash, btnStar, gridDialpad,
+          rowCallActions, tvNumber);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

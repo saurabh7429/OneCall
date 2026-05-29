@@ -176,10 +176,53 @@
                 </LinearLayout>
                 <TextView android:id="@+id/tv_version"
                     android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/privacy_note" android:textSize="13sp"
-                    android:textColor="@color/text_hint" android:layout_marginTop="8dp" />
+                    android:textSize="12sp"
+                    android:textColor="@color/text_hint" android:layout_marginTop="4dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+        <!-- PRIVACY HIGHLIGHT — prominent offline badge -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#1A00D4AA"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔒"
+                android:textSize="20sp"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="100% Offline — No Internet"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brand_secondary" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/privacy_note_detail"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginTop="2dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 

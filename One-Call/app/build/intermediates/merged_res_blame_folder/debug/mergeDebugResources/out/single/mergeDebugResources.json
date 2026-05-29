@@ -32,6 +32,14 @@
         "source": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-main-54:/drawable/ic_mic_off.xml"
     },
     {
+        "merged": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-debug-52:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-main-54:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.onecall.app-debug-52:/layout_fragment_contacts.xml.flat",
+        "source": "com.onecall.app-main-54:/layout/fragment_contacts.xml"
+    },
+    {
         "merged": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-debug-52:/layout_fragment_secondary_setup.xml.flat",
         "source": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-main-54:/layout/fragment_secondary_setup.xml"
     },
@@ -84,6 +92,10 @@
         "source": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-main-54:/layout/fragment_permissions.xml"
     },
     {
+        "merged": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-debug-52:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-main-54:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
         "merged": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-debug-52:/layout_fragment_dialpad.xml.flat",
         "source": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-main-54:/layout/fragment_dialpad.xml"
     },
@@ -94,10 +106,6 @@
     {
         "merged": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-debug-52:/layout_fragment_secondary_dashboard.xml.flat",
         "source": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-main-54:/layout/fragment_secondary_dashboard.xml"
-    },
-    {
-        "merged": "com.onecall.app-debug-52:/menu_bottom_nav_menu.xml.flat",
-        "source": "com.onecall.app-main-54:/menu/bottom_nav_menu.xml"
     },
     {
         "merged": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-debug-52:/drawable_ic_phone_incoming.xml.flat",
@@ -172,12 +180,12 @@
         "source": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-main-54:/layout/activity_incoming_call.xml"
     },
     {
-        "merged": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-debug-52:/drawable_ic_connected.xml.flat",
-        "source": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-main-54:/drawable/ic_connected.xml"
-    },
-    {
         "merged": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-debug-52:/drawable_ic_transfer.xml.flat",
         "source": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-main-54:/drawable/ic_transfer.xml"
+    },
+    {
+        "merged": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-debug-52:/drawable_ic_connected.xml.flat",
+        "source": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-main-54:/drawable/ic_connected.xml"
     },
     {
         "merged": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-debug-52:/layout_fragment_device_settings.xml.flat",
@@ -190,5 +198,9 @@
     {
         "merged": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-debug-52:/layout_item_tutorial_card.xml.flat",
         "source": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-main-54:/layout/item_tutorial_card.xml"
+    },
+    {
+        "merged": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-debug-52:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/home/saurabh/.gradle/daemon/8.9/com.onecall.app-main-54:/drawable/ic_launcher_foreground.xml"
     }
 ]

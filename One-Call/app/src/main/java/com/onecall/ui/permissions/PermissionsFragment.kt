@@ -98,28 +98,84 @@ class PermissionsFragment : Fragment() {
         requiredPermissions.clear()
         optionalPermissions.clear()
 
-        // Required
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            requiredPermissions.add(PermissionItem(Manifest.permission.BLUETOOTH_CONNECT, R.string.permission_nearby, R.string.permission_nearby_desc, true))
-            requiredPermissions.add(PermissionItem(Manifest.permission.BLUETOOTH_SCAN, R.string.permission_nearby, R.string.permission_nearby_desc, true))
+            // Android 12+ — BLUETOOTH_CONNECT and BLUETOOTH_SCAN as separate items
+            requiredPermissions.add(PermissionItem(
+                Manifest.permission.BLUETOOTH_CONNECT,
+                R.string.permission_bt_connect,
+                R.string.permission_bt_connect_desc,
+                true
+            ))
+            requiredPermissions.add(PermissionItem(
+                Manifest.permission.BLUETOOTH_SCAN,
+                R.string.permission_bt_scan,
+                R.string.permission_bt_scan_desc,
+                true
+            ))
         } else {
-            requiredPermissions.add(PermissionItem(Manifest.permission.BLUETOOTH, R.string.permission_bluetooth, R.string.permission_bluetooth_desc, true))
+            // Android 8-11 — legacy BLUETOOTH permission
+            requiredPermissions.add(PermissionItem(
+                Manifest.permission.BLUETOOTH,
+                R.string.permission_bluetooth,
+                R.string.permission_bluetooth_desc,
+                true
+            ))
+            // Android 8-11 needs ACCESS_FINE_LOCATION for Bluetooth scan
+            requiredPermissions.add(PermissionItem(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                R.string.permission_location,
+                R.string.permission_location_desc,
+                true
+            ))
         }
-        requiredPermissions.add(PermissionItem(Manifest.permission.READ_PHONE_STATE, R.string.permission_phone, R.string.permission_phone_desc, true))
-        requiredPermissions.add(PermissionItem(Manifest.permission.RECORD_AUDIO, R.string.permission_microphone, R.string.permission_microphone_desc, true))
+
+        requiredPermissions.add(PermissionItem(
+            Manifest.permission.READ_PHONE_STATE,
+            R.string.permission_phone,
+            R.string.permission_phone_desc,
+            true
+        ))
+        requiredPermissions.add(PermissionItem(
+            Manifest.permission.RECORD_AUDIO,
+            R.string.permission_microphone,
+            R.string.permission_microphone_desc,
+            true
+        ))
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            requiredPermissions.add(PermissionItem(Manifest.permission.ANSWER_PHONE_CALLS, R.string.permission_answer_calls, R.string.permission_answer_calls_desc, true))
+            requiredPermissions.add(PermissionItem(
+                Manifest.permission.ANSWER_PHONE_CALLS,
+                R.string.permission_answer_calls,
+                R.string.permission_answer_calls_desc,
+                true
+            ))
         }
-        requiredPermissions.add(PermissionItem(Manifest.permission.CALL_PHONE, R.string.permission_call_phone, R.string.permission_call_phone_desc, true))
+        requiredPermissions.add(PermissionItem(
+            Manifest.permission.CALL_PHONE,
+            R.string.permission_call_phone,
+            R.string.permission_call_phone_desc,
+            true
+        ))
 
         // Optional
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.R) {
-            optionalPermissions.add(PermissionItem(Manifest.permission.ACCESS_FINE_LOCATION, R.string.permission_location, R.string.permission_location_desc, false))
-        }
-        optionalPermissions.add(PermissionItem(Manifest.permission.READ_CONTACTS, R.string.permission_contacts, R.string.permission_contacts_desc, false))
-        optionalPermissions.add(PermissionItem(Manifest.permission.READ_CALL_LOG, R.string.permission_call_log, R.string.permission_call_log_desc, false))
+        optionalPermissions.add(PermissionItem(
+            Manifest.permission.READ_CONTACTS,
+            R.string.permission_contacts,
+            R.string.permission_contacts_desc,
+            false
+        ))
+        optionalPermissions.add(PermissionItem(
+            Manifest.permission.READ_CALL_LOG,
+            R.string.permission_call_log,
+            R.string.permission_call_log_desc,
+            false
+        ))
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            optionalPermissions.add(PermissionItem(Manifest.permission.POST_NOTIFICATIONS, R.string.permission_notifications, R.string.permission_notifications_desc, false))
+            optionalPermissions.add(PermissionItem(
+                Manifest.permission.POST_NOTIFICATIONS,
+                R.string.permission_notifications,
+                R.string.permission_notifications_desc,
+                false
+            ))
         }
     }
 

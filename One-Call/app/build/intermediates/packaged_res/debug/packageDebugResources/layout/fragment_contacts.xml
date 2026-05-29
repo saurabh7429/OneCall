@@ -1,53 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Contacts: Simple EditText search box with custom background visible on Android 8 dark theme -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/bg_dark"
-    android:padding="24dp">
+    android:background="@color/bg_dark">
 
-    <TextView
+    <!-- Header bar -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/contacts_title"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="@color/text_primary"
-        android:layout_marginBottom="16dp" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="12dp">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_marginBottom="16dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_search"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/contacts_title"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary" />
+
+    </LinearLayout>
+
+    <!-- Search box — plain background, clearly visible on Android 8+ dark mode -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/bg_card"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp">
+
+        <!-- Search icon -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔍"
+            android:textSize="16sp"
+            android:layout_marginEnd="10dp" />
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:hint="@string/contacts_search_hint"
-            android:inputType="text"
             android:textColor="@color/text_primary"
-            android:textColorHint="@color/text_hint" />
+            android:textColorHint="@color/text_hint"
+            android:textSize="15sp"
+            android:background="@null"
+            android:inputType="text"
+            android:singleLine="true"
+            android:imeOptions="actionSearch" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
 
+    <!-- Contact list -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_contacts"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:clipToPadding="false" />
 
+    <!-- Empty state -->
     <TextView
         android:id="@+id/tv_no_contacts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/no_contacts"
-        android:textSize="16sp"
+        android:textSize="15sp"
         android:textColor="@color/text_hint"
         android:gravity="center"
-        android:layout_marginTop="32dp"
+        android:padding="32dp"
         android:visibility="gone" />
 
 </LinearLayout>

@@ -118,16 +118,41 @@ class SecondarySetupFragment : Fragment() {
 
     private fun startScan() {
         if (!btManager.isBluetoothEnabled()) {
+            Toast.makeText(requireContext(), getString(R.string.error_bluetooth_off), Toast.LENGTH_SHORT).show()
             btManager.enableBluetooth()
             return
         }
+
+        // Android 8-11: ACCESS_FINE_LOCATION is required for Bluetooth scan
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.S) {
+            val locationGranted = androidx.core.content.ContextCompat.checkSelfPermission(
+                requireContext(), android.Manifest.permission.ACCESS_FINE_LOCATION
+            ) == android.content.pm.PackageManager.PERMISSION_GRANTED
+            if (!locationGranted) {
+                Toast.makeText(
+                    requireContext(),
+                    "Location permission required to scan Bluetooth devices on Android 8-11. Please grant it in Permissions settings.",
+                    Toast.LENGTH_LONG
+                ).show()
+                return
+            }
+        }
+
         discoveredDevices.clear()
-        // Re-add bonded
-        btManager.getBondedDevices().forEach {
-            discoveredDevices.add(it)
+        // Re-add already-bonded devices first
+        try {
+            btManager.getBondedDevices().forEach { discoveredDevices.add(it) }
+        } catch (e: SecurityException) {
+            // Permission issue — skip bonded devices
         }
         deviceAdapter.notifyDataSetChanged()
-        btManager.startDiscovery()
+
+        try {
+            btManager.startDiscovery()
+            Toast.makeText(requireContext(), "Scanning…", Toast.LENGTH_SHORT).show()
+        } catch (e: SecurityException) {
+            Toast.makeText(requireContext(), "Bluetooth permission denied. Please grant it in Permissions.", Toast.LENGTH_LONG).show()
+        }
     }
 
     override fun onDestroyView() {

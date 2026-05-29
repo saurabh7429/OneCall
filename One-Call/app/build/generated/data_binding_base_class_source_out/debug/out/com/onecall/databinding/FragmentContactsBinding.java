@@ -4,6 +4,7 @@ package com.onecall.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -11,7 +12,6 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.textfield.TextInputEditText;
 import com.onecall.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -22,7 +22,7 @@ public final class FragmentContactsBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final TextInputEditText etSearch;
+  public final EditText etSearch;
 
   @NonNull
   public final RecyclerView rvContacts;
@@ -30,9 +30,8 @@ public final class FragmentContactsBinding implements ViewBinding {
   @NonNull
   public final TextView tvNoContacts;
 
-  private FragmentContactsBinding(@NonNull LinearLayout rootView,
-      @NonNull TextInputEditText etSearch, @NonNull RecyclerView rvContacts,
-      @NonNull TextView tvNoContacts) {
+  private FragmentContactsBinding(@NonNull LinearLayout rootView, @NonNull EditText etSearch,
+      @NonNull RecyclerView rvContacts, @NonNull TextView tvNoContacts) {
     this.rootView = rootView;
     this.etSearch = etSearch;
     this.rvContacts = rvContacts;
@@ -67,7 +66,7 @@ public final class FragmentContactsBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.et_search;
-      TextInputEditText etSearch = ViewBindings.findChildViewById(rootView, id);
+      EditText etSearch = ViewBindings.findChildViewById(rootView, id);
       if (etSearch == null) {
         break missingId;
       }

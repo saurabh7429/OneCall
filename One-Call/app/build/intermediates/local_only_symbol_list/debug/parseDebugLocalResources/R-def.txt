@@ -16,6 +16,7 @@ color btn_primary
 color btn_secondary
 color divider
 color glass_bg
+color ic_launcher_background
 color overlay_dark
 color status_connected
 color status_connecting
@@ -49,6 +50,7 @@ drawable ic_app_icon
 drawable ic_bluetooth
 drawable ic_connected
 drawable ic_disconnected
+drawable ic_launcher_foreground
 drawable ic_mic
 drawable ic_mic_off
 drawable ic_nav_contacts
@@ -63,6 +65,7 @@ drawable ic_transfer
 id action_main_setup_to_dashboard
 id action_permissions_to_main_setup
 id action_permissions_to_secondary_setup
+id action_secondary_dashboard_to_secondary_setup
 id action_secondary_setup_to_dashboard
 id action_settings_to_device_settings
 id action_settings_to_permissions
@@ -97,6 +100,7 @@ id btn_enable_bt
 id btn_end_call
 id btn_forget_device
 id btn_forget_paired
+id btn_go_setup
 id btn_grant
 id btn_grant_all
 id btn_hash
@@ -130,6 +134,7 @@ id dialpadFragment
 id et_search
 id fl_avatar
 id fl_pulse_container
+id grid_dialpad
 id indicator_layout
 id item_clear_history
 id item_nickname
@@ -155,6 +160,7 @@ id permissionsFragment
 id privacyPolicyFragment
 id pulse_ring_inner
 id pulse_ring_outer
+id row_call_actions
 id rv_call_history
 id rv_contacts
 id rv_device_history
@@ -229,6 +235,8 @@ layout item_device
 layout item_permission
 layout item_tutorial_card
 menu bottom_nav_menu
+mipmap ic_launcher
+mipmap ic_launcher_round
 navigation nav_graph
 string allow_outgoing
 string already_configured
@@ -328,6 +336,10 @@ string permission_background
 string permission_background_desc
 string permission_bluetooth
 string permission_bluetooth_desc
+string permission_bt_connect
+string permission_bt_connect_desc
+string permission_bt_scan
+string permission_bt_scan_desc
 string permission_call_log
 string permission_call_log_desc
 string permission_call_phone
@@ -338,8 +350,6 @@ string permission_location
 string permission_location_desc
 string permission_microphone
 string permission_microphone_desc
-string permission_nearby
-string permission_nearby_desc
 string permission_notifications
 string permission_notifications_desc
 string permission_optional_info
@@ -350,6 +360,7 @@ string permissions_optional_header
 string permissions_required_header
 string permissions_title
 string privacy_note
+string privacy_note_detail
 string privacy_policy_title
 string ring_on_device
 string ringing_on_one

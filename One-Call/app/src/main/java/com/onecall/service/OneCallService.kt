@@ -252,7 +252,7 @@ class OneCallService : Service() {
             }
             MessageType.HISTORY_SYNC -> {
                 if (currentMode == DeviceMode.SECONDARY) {
-                    saveHistoryEntry(message, false)
+                    saveHistoryFromMessage(message, false)
                 }
             }
         }
@@ -296,11 +296,13 @@ class OneCallService : Service() {
         ))
         if (currentMode == DeviceMode.MAIN) {
             endCallViaTelecom()
-            saveHistoryEntry(RfcommMessage(
-                type = MessageType.HISTORY_SYNC,
+            val callType = if (currentCallerNumber?.isNotBlank() == true) "OUTGOING" else "INCOMING"
+            saveHistoryEntry(
+                callerNumber = currentCallerNumber ?: "",
                 callerName = currentCallerName,
-                callerNumber = currentCallerNumber
-            ), true)
+                callType = callType,
+                duration = duration
+            )
         }
         callStartTime = 0
         currentCallerName = null
@@ -379,14 +381,22 @@ class OneCallService : Service() {
 
     private fun makeCall(number: String?) {
         if (number == null) return
+        callStartTime = System.currentTimeMillis()
+        isCallActive = true
+        currentCallerNumber = number
+        currentCallerName = null
         try {
             val intent = Intent(Intent.ACTION_CALL).apply {
                 data = android.net.Uri.parse("tel:$number")
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }
             startActivity(intent)
+            // Launch our own active call screen after placing the call
+            launchActiveCall(null, number)
         } catch (e: SecurityException) {
             Log.e(TAG, "No permission to make call", e)
+            isCallActive = false
+            callStartTime = 0
         }
     }
 
@@ -401,24 +411,39 @@ class OneCallService : Service() {
         }
     }
 
-    private fun saveHistoryEntry(message: RfcommMessage, isPermanent: Boolean) {
+    private fun saveHistoryEntry(
+        callerNumber: String,
+        callerName: String?,
+        callType: String,
+        duration: Long = 0L
+    ) {
         scope.launch {
             try {
                 repository?.insert(
                     CallHistoryEntity(
-                        callerNumber = message.callerNumber ?: "",
-                        callerName = message.callerName,
-                        callType = "INCOMING",
-                        durationSeconds = 0,
+                        callerNumber = callerNumber,
+                        callerName = callerName,
+                        callType = callType,
+                        durationSeconds = duration,
                         timestamp = System.currentTimeMillis(),
                         deviceSource = currentMode?.name ?: "UNKNOWN",
-                        isPermanent = isPermanent
+                        isPermanent = true
                     )
                 )
             } catch (e: Exception) {
                 Log.e(TAG, "Error saving history", e)
             }
         }
+    }
+
+    // Legacy overload for RFCOMM history sync messages
+    private fun saveHistoryFromMessage(message: RfcommMessage, isPermanent: Boolean) {
+        saveHistoryEntry(
+            callerNumber = message.callerNumber ?: "",
+            callerName = message.callerName,
+            callType = "INCOMING",
+            duration = 0
+        )
     }
 
     private fun updateConnectionState(state: ConnectionState, deviceName: String?) {

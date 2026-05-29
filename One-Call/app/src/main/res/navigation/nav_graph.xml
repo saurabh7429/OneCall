@@ -81,7 +81,13 @@
         android:id="@+id/secondaryDashboardFragment"
         android:name="com.onecall.ui.dashboard.SecondaryDashboardFragment"
         android:label="Dashboard"
-        tools:layout="@layout/fragment_secondary_dashboard" />
+        tools:layout="@layout/fragment_secondary_dashboard">
+        <action
+            android:id="@+id/action_secondary_dashboard_to_secondary_setup"
+            app:destination="@id/secondarySetupFragment"
+            app:popUpTo="@id/secondaryDashboardFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
 
     <fragment
         android:id="@+id/dialpadFragment"

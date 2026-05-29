@@ -18,28 +18,40 @@
     <string name="btn_grant">Grant</string>
     <string name="btn_skip">Skip</string>
     <string name="btn_continue">Continue</string>
-    <string name="permission_required_warning">Yeh permission zaroor chahiye — app nahi chalega</string>
-    <string name="permission_optional_info">Yeh feature disabled rahega agar deny karo</string>
+    <string name="permission_required_warning">⚠️ Zaruri hai — Bina iske app kaam nahi karega</string>
+    <string name="permission_optional_info">Optional — Deny karo toh yeh feature band rahega</string>
+
+    <!-- Bluetooth Legacy (API < 31) -->
     <string name="permission_bluetooth">Bluetooth</string>
-    <string name="permission_bluetooth_desc">Devices connect karne ke liye</string>
-    <string name="permission_nearby">Nearby Devices</string>
-    <string name="permission_nearby_desc">Bluetooth scan aur connect (Android 12+)</string>
+    <string name="permission_bluetooth_desc">Agar deny kiya toh dono phones connect nahi honge aur app kisi kaam ka nahi rahega</string>
+
+    <!-- Bluetooth API 31+ -->
+    <string name="permission_bt_connect">Bluetooth — Devices Connect Karo</string>
+    <string name="permission_bt_connect_desc">Agar deny kiya toh aapka phone secondary device se jud nahi paayega</string>
+    <string name="permission_bt_scan">Bluetooth — Devices Dhundhna</string>
+    <string name="permission_bt_scan_desc">Agar deny kiya toh aas-paas ke devices scan nahi honge aur connect karna impossible ho jaayega</string>
+
+    <!-- Phone -->
     <string name="permission_phone">Phone State</string>
-    <string name="permission_phone_desc">Incoming calls detect karne ke liye</string>
+    <string name="permission_phone_desc">Agar deny kiya toh app ko pata nahi chalega ki call aa rahi hai — ringtone nahi bajegi</string>
     <string name="permission_microphone">Microphone</string>
-    <string name="permission_microphone_desc">Call audio ke liye</string>
-    <string name="permission_answer_calls">Answer Calls</string>
-    <string name="permission_answer_calls_desc">Calls accept/decline karne ke liye</string>
-    <string name="permission_call_phone">Make Calls</string>
-    <string name="permission_call_phone_desc">Outgoing calls ke liye</string>
-    <string name="permission_location">Location</string>
-    <string name="permission_location_desc">Bluetooth scan (Android 10-11 only)</string>
+    <string name="permission_microphone_desc">Agar deny kiya toh call pe aapki awaaz dusre tak nahi pahunchegi</string>
+    <string name="permission_answer_calls">Call Answer Karna</string>
+    <string name="permission_answer_calls_desc">Agar deny kiya toh phone app se call pick karna ya kaat-na kaam nahi karega</string>
+    <string name="permission_call_phone">Call Karna</string>
+    <string name="permission_call_phone_desc">Agar deny kiya toh secondary device se outgoing calls nahi ho paayengi</string>
+
+    <!-- Location -->
+    <string name="permission_location">Location (Bluetooth Scan ke liye)</string>
+    <string name="permission_location_desc">Android 8–11 mein Bluetooth devices dhundhne ke liye Location permission zaroori hai — koi GPS data nahi jaata internet pe</string>
+
+    <!-- Optional -->
     <string name="permission_contacts">Contacts</string>
-    <string name="permission_contacts_desc">Caller naam dikhane ke liye</string>
+    <string name="permission_contacts_desc">Agar deny kiya toh incoming call pe sirf number dikhega, naam nahi</string>
     <string name="permission_call_log">Call Log</string>
-    <string name="permission_call_log_desc">Call history save karne ke liye</string>
+    <string name="permission_call_log_desc">Agar deny kiya toh call history save nahi hogi</string>
     <string name="permission_notifications">Notifications</string>
-    <string name="permission_notifications_desc">Call alerts ke liye</string>
+    <string name="permission_notifications_desc">Agar deny kiya toh call aane pe notification alert nahi aayega (Android 13+)</string>
     <string name="permission_background">Background Activity</string>
     <string name="permission_background_desc">Boot pe auto-start karne ke liye</string>
 
@@ -154,7 +166,8 @@
     <string name="open_tutorial">Tutorial</string>
     <string name="open_permissions">Permissions</string>
     <string name="app_version">App Version</string>
-    <string name="privacy_note">Koi data internet pe nahi jaata — fully offline</string>
+    <string name="privacy_note">🔒 Koi data internet pe nahi jaata — fully offline</string>
+    <string name="privacy_note_detail">Aapki sabhi calls, contacts aur Bluetooth data sirf aapke devices ke beech rehta hai. Koi server nahi, koi cloud nahi.</string>
     <string name="history_cleared">History cleared</string>
     <string name="nickname_updated">Nickname updated</string>
 

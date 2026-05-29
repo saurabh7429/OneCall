@@ -21,7 +21,13 @@ public final class FragmentSecondaryDashboardBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final MaterialButton btnGoSetup;
+
+  @NonNull
   public final MaterialButton btnOpenDialpad;
+
+  @NonNull
+  public final MaterialButton btnReconnect;
 
   @NonNull
   public final View statusDot;
@@ -33,10 +39,13 @@ public final class FragmentSecondaryDashboardBinding implements ViewBinding {
   public final TextView tvConnectionState;
 
   private FragmentSecondaryDashboardBinding(@NonNull LinearLayout rootView,
-      @NonNull MaterialButton btnOpenDialpad, @NonNull View statusDot,
+      @NonNull MaterialButton btnGoSetup, @NonNull MaterialButton btnOpenDialpad,
+      @NonNull MaterialButton btnReconnect, @NonNull View statusDot,
       @NonNull TextView tvConnectedTo, @NonNull TextView tvConnectionState) {
     this.rootView = rootView;
+    this.btnGoSetup = btnGoSetup;
     this.btnOpenDialpad = btnOpenDialpad;
+    this.btnReconnect = btnReconnect;
     this.statusDot = statusDot;
     this.tvConnectedTo = tvConnectedTo;
     this.tvConnectionState = tvConnectionState;
@@ -69,9 +78,21 @@ public final class FragmentSecondaryDashboardBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btn_go_setup;
+      MaterialButton btnGoSetup = ViewBindings.findChildViewById(rootView, id);
+      if (btnGoSetup == null) {
+        break missingId;
+      }
+
       id = R.id.btn_open_dialpad;
       MaterialButton btnOpenDialpad = ViewBindings.findChildViewById(rootView, id);
       if (btnOpenDialpad == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_reconnect;
+      MaterialButton btnReconnect = ViewBindings.findChildViewById(rootView, id);
+      if (btnReconnect == null) {
         break missingId;
       }
 
@@ -93,8 +114,8 @@ public final class FragmentSecondaryDashboardBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentSecondaryDashboardBinding((LinearLayout) rootView, btnOpenDialpad,
-          statusDot, tvConnectedTo, tvConnectionState);
+      return new FragmentSecondaryDashboardBinding((LinearLayout) rootView, btnGoSetup,
+          btnOpenDialpad, btnReconnect, statusDot, tvConnectedTo, tvConnectionState);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
